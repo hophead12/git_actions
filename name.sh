@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Danylo Bosenko"
+echo $1 $2
