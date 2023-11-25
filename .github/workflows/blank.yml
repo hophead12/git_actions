@@ -1,7 +1,7 @@
 name: my first CI on github
 env:
-  FIRST_NAME : ${{ vars.first_name }}
-  LAST_NAME : ${{ secrets.last_name }}
+  FIRST_NAME : ${{ name.first_name }}
+  LAST_NAME : ${{ name.last_name }}
 on:
   push:
     branches: [ "main" ]
@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Check cred
-        run: echo $FiRST_NAME $LAST_NAME
+        run: echo $FIRST_NAME $LAST_NAME
         
       - name: Run a name script
         run: ./name.sh $FIRST_NAME $LAST_NAME
