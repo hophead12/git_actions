@@ -1,4 +1,4 @@
-name: CI
+name: my first CI on github
 env:
   FIRST_NAME : ${{ vars.first_name }}
   LAST_NAME : ${{ secrets.last_name }}
@@ -7,11 +7,11 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:
+    
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run a name script
-        run: ./name.sh $FIRST_NAME $LAST_NAME
+        run: bash ./name.sh $FIRST_NAME $LAST_NAME
