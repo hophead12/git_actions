@@ -1,7 +1,7 @@
 name: my first CI on github
 env:
   FIRST_NAME : ${{ vars.first_name }}
-  LAST_NAME : ${{ secrets.last_name }}
+  LAST_NAME : ${{ vars.last_name }}
 on:
   push:
     branches: [ "main" ]
